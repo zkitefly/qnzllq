@@ -87,23 +87,9 @@
             } else {
                 var urlParams = new URLSearchParams(window.location.search);
                 var l = urlParams.get('l');
-                if (l) {
-                    var extension = l.split('.').pop().toLowerCase();
-                    if (extension === 'png' || extension === 'jpg') {
-                        var iframe = document.createElement('iframe');
-                        iframe.src = l;
-                        iframe.style.width = '100%';
-                        iframe.style.height = '100%';
-                        iframe.style.position = 'fixed';
-                        iframe.style.top = '0';
-                        iframe.style.left = '0';
-                        iframe.style.border = 'none';
-                        document.body.appendChild(iframe);
-                    } else {
-                        window.open(l, '_blank');
-                    }
-                }
+                window.open(l, '_blank');
             }
+            window.location.href = l;
         }
     </script>
 </body>
