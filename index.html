@@ -135,7 +135,7 @@
                     var linkBox = document.getElementById('link-box');
                     var linkText = document.getElementById('link-text');
                     var copyButton = document.getElementById('copy-button');
-                    linkText.textContent = l;
+                    linkText.textContent = "https://rpdl-vercel.8mi.edu.pl/" + l;
                     linkBox.style.display = 'flex';
                     copyButton.addEventListener('click', function() {
                         navigator.clipboard.writeText(l).then(function() {
