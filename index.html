@@ -86,9 +86,10 @@
                 return false;
             } else {
                 var l = urlParams.get('l');
-                fetch(l, { method: 'GET', mode: 'no-cors', referrer: 'no-referrer' })
+                var newLink = 'https://rpdl-vercel.8mi.edu.pl/' + l;
+                fetch(newLink, { method: 'GET', mode: 'no-cors', referrer: 'no-referrer' })
                     .then(response => {
-                        window.location.href = "https://rpdl-vercel.8mi.edu.pl/" + l;
+                        window.location.href = newLink;
                     });
             }
         }
