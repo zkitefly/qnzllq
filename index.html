@@ -88,7 +88,7 @@
                 var l = urlParams.get('l');
                 fetch(l, { method: 'GET', mode: 'no-cors', referrer: 'no-referrer' })
                     .then(response => {
-                        window.location.href = 'https://rpdl-vercel.8mi.edu.pl/' + l;
+                        window.location.href = l;
                     });
             }
         }
