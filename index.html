@@ -87,9 +87,8 @@
             } else {
                 var urlParams = new URLSearchParams(window.location.search);
                 var l = urlParams.get('l');
-                window.open(l, '_blank');
+                window.location.href = l;
             }
-            window.location.href = l;
         }
     </script>
 </body>
