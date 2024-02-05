@@ -106,9 +106,9 @@
 
     <div class="link-box" id="link-box">
         <div class="link-container">
-            <h2>请复制以下链接</h2>
+            <h2>请拷贝以下链接，打开新页面粘贴链接并访问！</h2>
             <p id="link-text"></p>
-            <button id="copy-button">复制链接</button>
+            <button id="copy-button">→复制链接←</button>
         </div>
     </div>
 
@@ -131,7 +131,7 @@
                 return false;
             } else {
                 var l = urlParams.get('l');
-                if (l.startsWith('https://img.kookapp.cn/')) {
+                if (l.includes('img.kookapp.cn')) {
                     var linkBox = document.getElementById('link-box');
                     var linkText = document.getElementById('link-text');
                     var copyButton = document.getElementById('copy-button');
@@ -139,14 +139,11 @@
                     linkBox.style.display = 'flex';
                     copyButton.addEventListener('click', function() {
                         navigator.clipboard.writeText(l).then(function() {
-                            alert('链接已复制');
+                            alert('链接已拷贝，请打开新页面粘贴链接并访问！（别告诉我你不会）');
                         });
                     });
                 } else {
-                    fetch(l, { method: 'GET', mode: 'no-cors', referrer: 'no-referrer' })
-                        .then(response => {
-                            window.location.href = l;
-                        });
+                    window.location.href = l;
                 }
             }
         }
