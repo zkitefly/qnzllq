@@ -79,13 +79,11 @@
             }
         })();
         window.onload = function () {
-            //var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
             var tip = document.getElementById('weixin-tip-box');
             if (is_weixin) {
                 tip.style.display = 'block';
                 return false;
             } else {
-                var urlParams = new URLSearchParams(window.location.search);
                 var l = urlParams.get('l');
                 window.location.href = l;
             }
